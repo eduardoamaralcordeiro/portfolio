@@ -930,6 +930,26 @@ html.night .services .svc-list li:hover p{color:var(--tx)}
 @media (width<=900px){html.night .services .svc-list li{padding:1.4rem 0}}
 html.night .orig .about h2 em,html.night .orig .h2 em{color:var(--forest)}
 
+/* ---------- video backgrounds: hero, About, Work ---------- */
+html.night .bgv{position:absolute;inset:0;overflow:hidden;border-radius:inherit;pointer-events:none;z-index:0}
+html.night .bgv video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+html.night .bgv:after{content:"";position:absolute;inset:0}
+html.night .slide.has-bgv>:not(.bgv){position:relative;z-index:1}
+html.night .scene .bgv{z-index:-3}
+html.night .scene.dark .sunset{display:none}
+html.night .bgv-aurora video{opacity:.95}
+html.night .bgv-aurora:after{background:linear-gradient(90deg,#060607cc 0%,#06060766 38%,#0000 65%)}
+html.night .bgv-orbs video{opacity:.5}
+html.night .bgv-orbs:after{background:radial-gradient(120% 90% at 30% 40%,#060607b3,#06060766 60%,#06060740)}
+html.night .bgv-moire video{opacity:.42}
+html.night .bgv-moire:after{background:linear-gradient(180deg,#060607d9 0%,#06060780 30%,#06060766 100%)}
+@media (prefers-reduced-motion:reduce){html.night .bgv video{display:none}}
+/* the Infância card stays light on a dark sheet */
+html.night .pcard:not(.dark){color:#171717}
+html.night .pcard:not(.dark) .pc-cta.gl{--fill:#171717;color:#fff}
+html.night .pcard:not(.dark) .pc-visual{box-shadow:inset 0 0 0 1px #0000000d}
+html.night .pcard.dark{box-shadow:0 30px 70px #000d}
+
 </style>
 </head>
 <body>
@@ -955,7 +975,7 @@ html.night .orig .about h2 em,html.night .orig .h2 em{color:var(--forest)}
 </div>
 
 <main id="main">
-<header class="scene dark" id="top" style="--backdrop:#060607">
+<header class="scene dark" id="top" style="--backdrop:#060607"><div class="bgv bgv-aurora" aria-hidden="true"><video autoplay muted loop playsinline preload="auto" poster="../media/bg-aurora.jpg"><source src="../media/bg-aurora.mp4" type="video/mp4"></video></div>
   <div class="sunset" aria-hidden="true"></div>
   <div class="wrap layout"><div class="copy">
     <h1>Hi, I’m Eduardo,<br>and I design <span class="rot" aria-hidden="true"><span class="word" data-words='["posters.","social media.","websites.","slide decks.","apps."]'>posters.</span></span><span class="sr-only">posters, social media, websites, slide decks and apps.</span></h1>
@@ -973,7 +993,7 @@ html.night .orig .about h2 em,html.night .orig .h2 em{color:var(--forest)}
   </div>
 </header>
 
-<div class="slide paper orig" style="--bg:#F7F5EF">
+<div class="slide dark has-bgv" style="--bg:#060607"><div class="bgv bgv-orbs" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="../media/bg-orbs.jpg"><source src="../media/bg-orbs.mp4" type="video/mp4"></video></div>
   <section class="wrap about" id="about">
     <figure class="primer" aria-hidden="true"><span class="pr-bar"><video muted loop playsinline autoplay preload="auto" poster="../media/primer-bar.jpg"><source src="../media/primer-bar.mp4" type="video/mp4"></video></span><figcaption class="pr-cap">Building my future, one layer at a time…</figcaption></figure>
     <h2>A little <em>about me.</em></h2>
@@ -993,7 +1013,7 @@ html.night .orig .about h2 em,html.night .orig .h2 em{color:var(--forest)}
   </section>
 </div>
 
-<div class="slide paper orig" style="--bg:#CDD5E0">
+<div class="slide dark has-bgv" style="--bg:#060607"><div class="bgv bgv-moire" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="../media/bg-moire.jpg"><source src="../media/bg-moire.mp4" type="video/mp4"></video></div>
   <section class="wrap work" id="work">
     <div class="head rv"><div><h2 class="h2">The <em>work.</em></h2></div><a class="btn outline" href="#experience">Full details <span class="arr" aria-hidden="true">→</span></a></div>
     <ol class="stack">
