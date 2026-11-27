@@ -969,13 +969,16 @@ html.night .services .svc-list h3{font-size:clamp(1.25rem,1.55vw,1.45rem);line-h
 html.night .services .svc-list p{font-size:.95rem;line-height:1.55;margin-top:.35rem;max-width:40ch}
 }
 /* every sheet is at least one screen tall, so each one holds before the next covers it */
-html.night .slide{min-height:100svh}
+html.night .slide.stk{min-height:100svh}
 html.night .slide{display:flex;flex-direction:column;justify-content:center}
 /* round 4: acid green on Work and Technical skills */
 html.night .bgv-macid video{opacity:.4}
 html.night .bgv-macid:after{background:linear-gradient(180deg,#060607d9 0%,#06060780 30%,#06060766 100%)}
 html.night .bgv-oacid video{opacity:.45}
 html.night .bgv-oacid:after{background:linear-gradient(180deg,#060607cc 0%,#06060766 40%,#06060780 100%)}
+/* hero: silk */
+html.night .bgv-silk video{opacity:.85}
+html.night .bgv-silk:after{background:linear-gradient(90deg,#060607d9 0%,#06060780 40%,#0000 70%),linear-gradient(0deg,#060607b3,#0000 30%)}
 
 </style>
 </head>
@@ -1002,7 +1005,7 @@ html.night .bgv-oacid:after{background:linear-gradient(180deg,#060607cc 0%,#0606
 </div>
 
 <main id="main">
-<header class="scene dark" id="top" style="--backdrop:#060607"><div class="bgv bgv-fluted" aria-hidden="true"><video autoplay muted loop playsinline preload="auto" poster="../media/bg-fluted.jpg"><source src="../media/bg-fluted.mp4" type="video/mp4"></video></div>
+<header class="scene dark" id="top" style="--backdrop:#060607"><div class="bgv bgv-silk" aria-hidden="true"><video autoplay muted loop playsinline preload="auto" poster="../media/bg-silk.jpg"><source src="../media/bg-silk.mp4" type="video/mp4"></video></div>
   <div class="sunset" aria-hidden="true"></div>
   <div class="wrap layout"><div class="copy">
     <h1>Hi, I’m Eduardo,<br>and I design <span class="rot" aria-hidden="true"><span class="word" data-words='["posters.","social media.","websites.","slide decks.","apps."]'>posters.</span></span><span class="sr-only">posters, social media, websites, slide decks and apps.</span></h1>
@@ -1071,7 +1074,7 @@ html.night .bgv-oacid:after{background:linear-gradient(180deg,#060607cc 0%,#0606
   </section>
 </div>
 
-<div class="slide paper" style="--bg:#E4E9F0">
+<div class="slide paper stk" style="--bg:#E4E9F0">
   <section class="designs" id="references">
     <div class="wrap head rv"><div><h2 class="h2">Visual <em>references.</em></h2></div><p>Posters, brand systems and interfaces I keep coming back to.</p></div>
     <div class="belt"><div class="belt-track" id="track"></div></div>
@@ -1079,7 +1082,7 @@ html.night .bgv-oacid:after{background:linear-gradient(180deg,#060607cc 0%,#0606
   </section>
 </div>
 
-<div class="slide dark has-bgv" style="--bg:#060607"><div class="bgv bgv-ocean" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="../media/bg-ocean.jpg"><source src="../media/bg-ocean.mp4" type="video/mp4"></video></div>
+<div class="slide dark has-bgv stk" style="--bg:#060607"><div class="bgv bgv-ocean" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="../media/bg-ocean.jpg"><source src="../media/bg-ocean.mp4" type="video/mp4"></video></div>
   <section class="mood" id="moodboard">
     <div class="wrap head rv"><div><h2 class="h2">The <em>moodboard.</em></h2></div></div>
     <div class="wrap mfilters" role="toolbar" aria-label="Filter references" id="mfilters"></div>
@@ -1100,7 +1103,7 @@ html.night .bgv-oacid:after{background:linear-gradient(180deg,#060607cc 0%,#0606
   <section class="wrap press rv">
     <figure><video src="../media/human-ai-door.mp4" poster="../media/human-ai-door.jpg" muted loop playsinline autoplay preload="metadata" aria-label="Animation: a door opens onto a wall of letters that spell human AI, under the line Opening the door to more human AI."></video></figure>
     <div>
-      <blockquote>“I review every output for errors and for the generic <span class="hl">“AI look”</span> before anything ships.”</blockquote>
+      <blockquote>Crafted experiences, designed to be beautiful and built to last.</blockquote>
       <p class="src">I use and manage AI tools end to end, from prompt design to running agents in parallel and reviewing every output, across writing, research, code, image, video and audio.</p>
       <div class="links"><a class="btn solid" href="#services">What I judge <span class="arr" aria-hidden="true">→</span></a><a class="btn outline" href="https://www.linkedin.com/in/eduardo-amaral-cordeiro-296361452" target="_blank" rel="noopener">LinkedIn ↗</a></div>
     </div>
@@ -1407,7 +1410,7 @@ const sheets=[...document.querySelectorAll('.scene, .slide')];
 const probe=document.createElement('div');probe.style.cssText='position:fixed;top:0;left:0;width:0;height:100svh;visibility:hidden;pointer-events:none';document.body.appendChild(probe);
 let vh=probe.offsetHeight||innerHeight,busy=false;
 const items=[...document.querySelectorAll('.stack-item')],cards=items.map(i=>i.firstElementChild);let tops=[];
-const layoutSheets=()=>{if(busy)return;busy=true;requestAnimationFrame(()=>{busy=false;vh=probe.offsetHeight||innerHeight;const t=sheets.map(s=>Math.min(0,vh-s.offsetHeight));sheets.forEach((s,i)=>{s.style.position='sticky';s.style.top=t[i]+'px'});const HOLD=Math.round(Math.min(380,Math.max(240,vh*.4)));sheets.forEach((s,i)=>{const n=sheets[i+1];if(!n)return;n.style.marginTop='';const base=parseFloat(getComputedStyle(n).marginTop)||0;if(s.offsetHeight>=vh-1)n.style.marginTop=(base+HOLD)+'px'});tops=items.map(i=>parseFloat(getComputedStyle(i).top)||0);cardTick()})};
+const layoutSheets=()=>{if(busy)return;busy=true;requestAnimationFrame(()=>{busy=false;vh=probe.offsetHeight||innerHeight;const t=sheets.map(s=>Math.min(0,vh-s.offsetHeight));sheets.forEach((s,i)=>{if(s.classList.contains('stk')){s.style.position='sticky';s.style.top=t[i]+'px'}else{s.style.position='';s.style.top=''}});const HOLD=Math.round(Math.min(380,Math.max(240,vh*.4)));sheets.forEach((s,i)=>{const n=sheets[i+1];if(!n)return;n.style.marginTop='';const base=parseFloat(getComputedStyle(n).marginTop)||0;if(s.classList.contains('stk')&&s.offsetHeight>=vh-1)n.style.marginTop=(base+HOLD)+'px'});tops=items.map(i=>parseFloat(getComputedStyle(i).top)||0);cardTick()})};
 let ct=false;
 const cardRun=()=>{ct=false;const r=items.map(i=>i.getBoundingClientRect().top);cards.forEach((c,i)=>{const p=RM||i===cards.length-1?0:Math.max(0,Math.min(1,(vh-r[i+1])/Math.max(vh-tops[i],1)));const v=(p<.45?0:(p-.45)/.55).toFixed(2);if(c.style.getPropertyValue('--p')!==v)c.style.setProperty('--p',v)})};
 function cardTick(){if(!ct){ct=true;requestAnimationFrame(cardRun)}}
