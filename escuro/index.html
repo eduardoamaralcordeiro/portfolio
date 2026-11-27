@@ -949,6 +949,13 @@ html.night .pcard:not(.dark){color:#171717}
 html.night .pcard:not(.dark) .pc-cta.gl{--fill:#171717;color:#fff}
 html.night .pcard:not(.dark) .pc-visual{box-shadow:inset 0 0 0 1px #0000000d}
 html.night .pcard.dark{box-shadow:0 30px 70px #000d}
+/* round 2 video backgrounds */
+html.night .bgv-fluted video{opacity:.55}
+html.night .bgv-fluted:after{background:linear-gradient(90deg,#060607f2 0%,#060607b3 40%,#06060759 70%,#06060780 100%),linear-gradient(0deg,#060607cc,#0000 35%)}
+html.night .bgv-rose video{opacity:.6}
+html.night .bgv-rose:after{background:linear-gradient(180deg,#060607e6 0%,#06060799 35%,#06060780 100%)}
+html.night .bgv-ocean video{opacity:.7}
+html.night .bgv-ocean:after{background:linear-gradient(180deg,#060607d9 0%,#060607a6 40%,#06060799 100%)}
 
 </style>
 </head>
@@ -975,7 +982,7 @@ html.night .pcard.dark{box-shadow:0 30px 70px #000d}
 </div>
 
 <main id="main">
-<header class="scene dark" id="top" style="--backdrop:#060607"><div class="bgv bgv-aurora" aria-hidden="true"><video autoplay muted loop playsinline preload="auto" poster="../media/bg-aurora.jpg"><source src="../media/bg-aurora.mp4" type="video/mp4"></video></div>
+<header class="scene dark" id="top" style="--backdrop:#060607"><div class="bgv bgv-fluted" aria-hidden="true"><video autoplay muted loop playsinline preload="auto" poster="../media/bg-fluted.jpg"><source src="../media/bg-fluted.mp4" type="video/mp4"></video></div>
   <div class="sunset" aria-hidden="true"></div>
   <div class="wrap layout"><div class="copy">
     <h1>Hi, I’m Eduardo,<br>and I design <span class="rot" aria-hidden="true"><span class="word" data-words='["posters.","social media.","websites.","slide decks.","apps."]'>posters.</span></span><span class="sr-only">posters, social media, websites, slide decks and apps.</span></h1>
@@ -1035,7 +1042,7 @@ html.night .pcard.dark{box-shadow:0 30px 70px #000d}
   </section>
 </div>
 
-<div class="slide dark" style="--bg:#1C2C4C">
+<div class="slide dark has-bgv" style="--bg:#060607"><div class="bgv bgv-rose" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="../media/bg-rose.jpg"><source src="../media/bg-rose.mp4" type="video/mp4"></video></div>
   <section class="reels" id="practice">
     <div class="wrap head rv"><div><h2 class="h2">Areas of <em>practice.</em></h2></div>
       <div class="side"><p>For each of these areas I can write the brief, make a reference version and judge AI-generated work against it.</p>
@@ -1080,7 +1087,7 @@ html.night .pcard.dark{box-shadow:0 30px 70px #000d}
   </section>
 </div>
 
-<div class="slide dark" style="--bg:#0a0a0b">
+<div class="slide dark has-bgv" style="--bg:#060607"><div class="bgv bgv-ocean" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="../media/bg-ocean.jpg"><source src="../media/bg-ocean.mp4" type="video/mp4"></video></div>
   <section class="wrap exp" id="experience">
     <div class="head rv"><div><h2 class="h2">Where I’ve <em>been.</em></h2></div><a class="cv" href="https://www.linkedin.com/in/eduardo-amaral-cordeiro-296361452" target="_blank" rel="noopener">View LinkedIn <i aria-hidden="true">↗</i></a></div>
     <ol class="rows" id="rows"></ol>
