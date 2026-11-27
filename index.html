@@ -446,11 +446,12 @@ blockquote{font:400 clamp(1.8rem,3vw,2.6rem)/1.18 var(--serif);margin:1rem 0}
 .composer a{background:var(--forest);color:#fff;border-radius:999px;padding:.45rem .9rem;font-weight:500;text-decoration:none}
 /* ---------- contact chat ---------- */
 .screen:focus-within{transform:none}
+.cgrid>*{min-width:0} /* the phone's long chat bubbles must not widen the column on small screens */
 .chat-st{display:flex;align-items:center;gap:.35rem}.chat-st i{width:7px;height:7px;border-radius:50%;background:#34c759;box-shadow:0 0 0 3px #34c75926}
 .thread.chat{min-height:300px;max-height:min(360px,52vh);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;padding:1rem .2rem .6rem}
 .thread.chat::-webkit-scrollbar{display:none}
 .chat .msg{white-space:pre-wrap;overflow-wrap:anywhere}
-.chat .msg small{display:block;margin-top:.25rem;color:#7a7a74;font-size:.74rem;line-height:1.35}
+.chat .msg small{display:block;margin-top:.25rem;color:#5c5c57;font-size:.74rem;line-height:1.35}
 .chat .msg a{color:#1f6fd1;text-decoration:none;font-weight:500}.chat .me a{color:#fff;text-decoration:underline}
 .chat .msg.err{background:#fbe9e6;color:#8a2a1c}
 .chat-in{gap:.4rem;padding:.3rem .3rem .3rem 1rem;color:var(--charcoal);transition:border-color .25s,box-shadow .25s}
