@@ -900,6 +900,36 @@ html.night .paper .tile span.cap{color:#3a3a3a}
 html.night .paper .tile b{color:var(--charcoal)}
 html.night .paper .tile .im{background:#dfe4ea;box-shadow:0 14px 30px #0b14261f}
 
+/* About and Work exactly as in the light site */
+html.night .paper.orig{--line:#17171724}
+html.night .orig .btn.outline,html.night .orig .btn.outline.gl:hover{color:var(--forest)}
+html.night .orig .lead{color:#1f1f1f}
+html.night .orig .more-inner p{color:#2a2a2a}
+html.night .orig .facts li{color:var(--deep);border-color:#1c2c4c33}
+html.night .orig .read-more,html.night .orig .read-more.gl:hover,html.night .orig .read-more.gl[aria-expanded=true]{color:var(--forest);border-color:#1c2c4c4d}
+html.night .orig .pmi,html.night .orig .read-more.gl:hover .pmi,html.night .orig .read-more.gl[aria-expanded=true] .pmi{background:var(--forest)}
+html.night .orig .pmi b,html.night .orig .read-more.gl:hover .pmi b,html.night .orig .read-more.gl[aria-expanded=true] .pmi b{background:#fff}
+html.night .orig .stats strong{color:var(--forest)}
+html.night .orig .stats span{color:#3a3a3a}
+html.night .orig .pr-bar{background:#e4ded5;box-shadow:0 12px 28px #0b142630,0 2px 6px #0b14261a}
+html.night .orig .pr-cap{color:#3a3a3a}
+html.night .orig .pcard{color:#171717;box-shadow:0 24px 60px #0b142629}
+html.night .orig .pcard.dark{color:var(--ivory)}
+html.night .orig .pcard:after{background:#0b1426}
+html.night .orig .pcard:not(.dark) .pc-visual{box-shadow:inset 0 0 0 1px #0000000d}
+html.night .orig .pcard.dark .pc-visual{box-shadow:none}
+html.night .orig .pcard.dark .pc-cta.gl{--fill:var(--ivory);color:#171717}
+html.night .orig .pcard:not(.dark) .pc-cta.gl{--fill:#171717;color:#fff}
+
+/* Creative evaluation: larger, shorter, easier to read on a computer */
+html.night .services .svc-list{column-gap:5rem;margin-top:1.5rem}
+html.night .services .svc-list li{padding:1.9rem 0 2rem;border-top-color:#ffffff24}
+html.night .services .svc-list h3{font:400 clamp(1.6rem,2.3vw,2.1rem)/1.1 var(--serif);color:var(--tx);letter-spacing:-.005em}
+html.night .services .svc-list p{font-size:clamp(1rem,1.25vw,1.15rem);line-height:1.5;color:#c9c5bd;margin-top:.6rem;max-width:34ch}
+html.night .services .svc-list li:hover p{color:var(--tx)}
+@media (width<=900px){html.night .services .svc-list li{padding:1.4rem 0}}
+html.night .orig .about h2 em,html.night .orig .h2 em{color:var(--forest)}
+
 </style>
 </head>
 <body>
@@ -943,7 +973,7 @@ html.night .paper .tile .im{background:#dfe4ea;box-shadow:0 14px 30px #0b14261f}
   </div>
 </header>
 
-<div class="slide dark" style="--bg:#0b0b0c">
+<div class="slide paper orig" style="--bg:#F7F5EF">
   <section class="wrap about" id="about">
     <figure class="primer" aria-hidden="true"><span class="pr-bar"><video muted loop playsinline autoplay preload="auto" poster="../media/primer-bar.jpg"><source src="../media/primer-bar.mp4" type="video/mp4"></video></span><figcaption class="pr-cap">Building my future, one layer at a time…</figcaption></figure>
     <h2>A little <em>about me.</em></h2>
@@ -963,18 +993,18 @@ html.night .paper .tile .im{background:#dfe4ea;box-shadow:0 14px 30px #0b14261f}
   </section>
 </div>
 
-<div class="slide dark" style="--bg:#0f0f11">
+<div class="slide paper orig" style="--bg:#CDD5E0">
   <section class="wrap work" id="work">
     <div class="head rv"><div><h2 class="h2">The <em>work.</em></h2></div><a class="btn outline" href="#experience">Full details <span class="arr" aria-hidden="true">→</span></a></div>
     <ol class="stack">
-      <li class="stack-item" style="--i:0"><article class="pcard dark" style="--cbg:#111113">
+      <li class="stack-item" style="--i:0"><article class="pcard dark" style="--cbg:#1B2A4A">
         <div class="pc-info"><h3>Poupey</h3>
           <p class="pc-sum">Personal finance app and brand for iPhone and Android, plus its sales landing page in Next.js, Bun, Tailwind CSS and shadcn/ui.</p>
           <ul class="pc-tags"><li>Product</li><li>Interface</li><li>Visual identity</li><li>Mascot</li></ul>
           <a class="pc-cta" href="#experience">2026 – Present <b aria-hidden="true">→</b></a></div>
         <div class="pc-visual pc-photo pc-fit" style="--vbg:#000"><img src="../assets/w-poupey.webp" alt="Poupey logo with the cat mascot: Conheça Poupey" loading="lazy"></div>
       </article></li>
-      <li class="stack-item" style="--i:1"><article class="pcard dark" style="--cbg:#111113">
+      <li class="stack-item" style="--i:1"><article class="pcard" style="--cbg:#F1ECFB">
         <div class="pc-info"><h3>Infância Segura</h3>
           <p class="pc-sum">Family app that keeps parents, nannies and grandparents in sync, including hidden cross-reactive foods in the allergy map. Grounded in the guidelines current as of November 2026.</p>
           <ul class="pc-tags"><li>Family sync</li><li>Allergy mapping</li><li>Starting solids</li><li>Sleep windows</li></ul>
@@ -985,7 +1015,7 @@ html.night .paper .tile .im{background:#dfe4ea;box-shadow:0 14px 30px #0b14261f}
   </section>
 </div>
 
-<div class="slide dark" style="--bg:#0a0a0b">
+<div class="slide dark" style="--bg:#1C2C4C">
   <section class="reels" id="practice">
     <div class="wrap head rv"><div><h2 class="h2">Areas of <em>practice.</em></h2></div>
       <div class="side"><p>For each of these areas I can write the brief, make a reference version and judge AI-generated work against it.</p>
@@ -1246,14 +1276,14 @@ const row=(yr,org,role,now,items,open,tags)=>`<li class="row${open?' open':''}">
 document.getElementById('rows').innerHTML=EXP.map((e,i)=>row(e[0],e[1],e[2],e[3],e[4],i===0,e[5])).join('');
 
 const SVC=[
- ['Task design','Realistic briefs with a defined audience, goal, tone, format and brand constraints and a single end deliverable, organized input files, and a finished reference deliverable for each area of practice above.'],
- ['Judging content','Checking whether an output follows the brief, fits the audience, delivers one clear message, and keeps every fact, number and claim accurate.'],
- ['Judging craft','Comparing layout, visual hierarchy, typography, color, spacing, alignment, legibility, brand consistency and mobile behavior side by side with the reference.'],
- ['Spotting AI failure modes','Generic “AI look” layouts, placeholder or filler text, off-brand colors and fonts, broken mobile layouts, invented facts and misread data.'],
- ['Written rationales','Short judgments that name the problem, where it appears and why it matters to the audience, a habit built writing clinical case reports and appraising evidence.'],
- ['Grading guidance','Turning recurring flaws into clear, checkable criteria (for example, one primary call to action, a headline readable at a glance, brand colors used consistently).'],
- ['Health and science communication','As a medical student, I can verify accuracy in medical decks, reports, patient education materials and training content.'],
- ['Assets and rights','Original mascot assets, SVG and icon libraries, stock media sourcing, Creative Commons licensing and attribution checks.']
+ ['Task Design','Realistic briefs, organized inputs, and reference deliverables.'],
+ ['Judging Content','Audience fit, message clarity, and factual accuracy.'],
+ ['Judging Craft','Layout, typography, brand consistency, and mobile behavior.'],
+ ['Spotting AI Failure Modes','Generic layouts, filler copy, broken screens, and invented facts.'],
+ ['Written Rationales','Explain the issue, where it appears, and why it matters.'],
+ ['Grading Guidance','Turn recurring flaws into clear, checkable criteria.'],
+ ['Health &amp; Science Communication','Medical student reviewing accuracy in patient and training materials.'],
+ ['Assets &amp; Rights','Original assets, SVGs, stock media, licensing, and attribution.']
 ];
 document.getElementById('svc').innerHTML=SVC.map((s,i)=>`<li class="rv"><h3>${s[0]}</h3><p>${s[1]}</p></li>`).join('');
 
