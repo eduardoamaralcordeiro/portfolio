@@ -843,7 +843,7 @@ const AREAS=[
  ['Staging and layouts','posters, logos, concept art','#5a2f3a','#c06a7c','Event posters, the Poupey mascot with its color system, and the Infância Segura brand image.','A poster or a mascot mood sheet, with logos, sponsor logos, the program, photography and color references.','A print-ready layout, judged on hierarchy readable at a distance, alignment, logo use, image resolution and character consistency.'],
  ['Interactive digital products','websites, apps','#24324f','#38bdf8','The Poupey app for iPhone and Android, the Infância Segura family app, and responsive landing pages in Next.js and Tailwind CSS.','A one-page landing for a consumer app, with mascot assets, colors, copy, app screenshots and a reference site.','A working responsive page, judged on hierarchy, call to action, mobile layout, working links and the absence of a generic AI look.']
 ];
-const AIMG=['r-cyberguard','r-collage-type','r-lease-space','r-type-posters','r-progress-weather'];
+const AIMG=['r-cyberguard','r-collage-type','r-lease-space','r-type-posters','r-poupey-globe'];
 document.getElementById('shelf').innerHTML=AREAS.map((a,i)=>`<figure class="area" aria-label="${esc(a[0])}"><div class="ph${AIMG[i]?' has-img':''}" style="--a:${a[2]};--b:${a[3]}">${AIMG[i]?`<video muted loop playsinline autoplay preload="metadata" poster="media/${AIMG[i]}.jpg" aria-hidden="true"><source src="media/${AIMG[i]}.mp4" type="video/mp4"></video>`:''}</div><dl><div><dt>My work</dt><dd>${a[4]}</dd></div><div><dt>Brief and inputs</dt><dd>${a[5]}</dd></div><div><dt>Reference and judging</dt><dd>${a[6]}</dd></div></dl></figure>`).join('');
 
 const DESIGNS=[
