@@ -961,6 +961,20 @@ html.night .bgv-ooze video{opacity:.38}
 html.night .bgv-ooze:after{background:linear-gradient(180deg,#060607cc 0%,#06060766 40%,#06060780 100%)}
 html.night .bgv-hex video{opacity:.6}
 html.night .bgv-hex:after{background:linear-gradient(180deg,#060607d9 0%,#06060780 30%,#06060766 100%)}
+/* About: numbers on top */
+html.night .stats.stats-top{border-top:0;border-bottom:1px solid var(--hair);margin-top:0;padding-top:7rem}
+html.night .stats.stats-top div{padding:0 1.5rem 2rem 0}
+html.night .stats.stats-top+.about{padding-top:3.5rem}
+@media (width<=900px){html.night .stats.stats-top{padding-top:5rem}html.night .stats.stats-top div{padding:1.2rem 0}html.night .stats.stats-top+.about{padding-top:2.5rem}}
+@media (width<=700px){html.night .stats.stats-top{padding-top:4.5rem;margin-top:0}html.night .stats.stats-top div{padding:0 .6rem 1.2rem 0}html.night .stats.stats-top+.about{padding-top:2rem}}
+/* Creative evaluation: calmer type on computers */
+@media (width>900px){
+html.night .services .svc-list{column-gap:4.5rem;margin-top:1rem}
+html.night .services .svc-list li{padding:1.35rem 0 1.45rem}
+html.night .services .svc-list h3{font-size:clamp(1.25rem,1.55vw,1.45rem);line-height:1.2}
+html.night .services .svc-list p{font-size:.95rem;line-height:1.55;margin-top:.35rem;max-width:40ch}
+}
+html.night .stats-top+.about .primer{top:calc(3.5rem + .4rem)}
 
 </style>
 </head>
@@ -1006,6 +1020,11 @@ html.night .bgv-hex:after{background:linear-gradient(180deg,#060607d9 0%,#060607
 </header>
 
 <div class="slide dark has-bgv" style="--bg:#060607"><div class="bgv bgv-orbs" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="../media/bg-orbs.jpg"><source src="../media/bg-orbs.mp4" type="video/mp4"></video></div>
+  <section class="wrap stats stats-top rv" aria-label="In numbers">
+    <div><strong data-count="10" data-suffix="+">10+</strong><span>years of hands-on computer work</span></div>
+    <div><strong data-count="20" data-suffix="+">20+</strong><span>congresses covered, from orthopedics to laboratory medicine</span></div>
+    <div><strong data-count="5">5</strong><span>areas of practice</span></div>
+  </section>
   <section class="wrap about" id="about">
     <figure class="primer" aria-hidden="true"><span class="pr-bar"><video muted loop playsinline autoplay preload="auto" poster="../media/primer-bar.jpg"><source src="../media/primer-bar.mp4" type="video/mp4"></video></span><figcaption class="pr-cap">Building my future, one layer at a time…</figcaption></figure>
     <h2>A little <em>about me.</em></h2>
@@ -1017,11 +1036,6 @@ html.night .bgv-hex:after{background:linear-gradient(180deg,#060607d9 0%,#060607
       <ul class="facts" style="--d:.24s"><li>Rio de Janeiro, Brazil</li><li>Remote contractor via Wise</li><li>edamaralc@gmail.com</li></ul>
     </div></div>
     <button class="read-more" type="button" aria-expanded="false" aria-controls="about-more" aria-label="Read more"><span class="rm-label"><span>Read more</span><span>Read less</span></span><i class="pmi" aria-hidden="true"><b></b><b></b></i></button>
-  </section>
-  <section class="wrap stats rv" aria-label="In numbers">
-    <div><strong data-count="10" data-suffix="+">10+</strong><span>years of hands-on computer work</span></div>
-    <div><strong data-count="17">17</strong><span>congresses covered, from oncology to laboratory medicine</span></div>
-    <div><strong data-count="5">5</strong><span>areas of practice</span></div>
   </section>
 </div>
 
@@ -1064,7 +1078,7 @@ html.night .bgv-hex:after{background:linear-gradient(180deg,#060607d9 0%,#060607
   </section>
 </div>
 
-<div class="slide dark has-bgv" style="--bg:#060607"><div class="bgv bgv-hex" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="../media/bg-hex.jpg"><source src="../media/bg-hex.mp4" type="video/mp4"></video></div>
+<div class="slide dark has-bgv" style="--bg:#060607"><div class="bgv bgv-ocean" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="../media/bg-ocean.jpg"><source src="../media/bg-ocean.mp4" type="video/mp4"></video></div>
   <section class="mood" id="moodboard">
     <div class="wrap head rv"><div><h2 class="h2">The <em>moodboard.</em></h2></div></div>
     <div class="wrap mfilters" role="toolbar" aria-label="Filter references" id="mfilters"></div>
