@@ -971,6 +971,11 @@ html.night .services .svc-list p{font-size:.95rem;line-height:1.55;margin-top:.3
 /* every sheet is at least one screen tall, so each one holds before the next covers it */
 html.night .slide{min-height:100svh}
 html.night .slide{display:flex;flex-direction:column;justify-content:center}
+/* round 4: acid green on Work and Technical skills */
+html.night .bgv-macid video{opacity:.4}
+html.night .bgv-macid:after{background:linear-gradient(180deg,#060607d9 0%,#06060780 30%,#06060766 100%)}
+html.night .bgv-oacid video{opacity:.45}
+html.night .bgv-oacid:after{background:linear-gradient(180deg,#060607cc 0%,#06060766 40%,#06060780 100%)}
 
 </style>
 </head>
@@ -1035,7 +1040,7 @@ html.night .slide{display:flex;flex-direction:column;justify-content:center}
   </section>
 </div>
 
-<div class="slide dark has-bgv" style="--bg:#060607"><div class="bgv bgv-moire" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="../media/bg-moire.jpg"><source src="../media/bg-moire.mp4" type="video/mp4"></video></div>
+<div class="slide dark has-bgv" style="--bg:#060607"><div class="bgv bgv-macid" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="../media/bg-macid.jpg"><source src="../media/bg-macid.mp4" type="video/mp4"></video></div>
   <section class="wrap work" id="work">
     <div class="head rv"><div><h2 class="h2">The <em>work.</em></h2></div><a class="btn outline" href="#experience">Full details <span class="arr" aria-hidden="true">→</span></a></div>
     <ol class="stack">
@@ -1117,7 +1122,7 @@ html.night .slide{display:flex;flex-direction:column;justify-content:center}
   </section>
 </div>
 
-<div class="slide dark" style="--bg:#0a0a0b">
+<div class="slide dark has-bgv" style="--bg:#060607"><div class="bgv bgv-oacid" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="../media/bg-oacid.jpg"><source src="../media/bg-oacid.mp4" type="video/mp4"></video></div>
   <section class="tbx" id="skills">
     <div class="tbx-marquee" aria-hidden="true"><div class="mq"><span id="mq1"></span></div><div class="mq rev"><span id="mq2"></span></div></div>
     <div class="wrap">
