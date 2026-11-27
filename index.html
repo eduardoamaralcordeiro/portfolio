@@ -206,25 +206,14 @@ img{max-width:100%;height:auto;display:block}a{color:inherit}
 .area .ph:not(.has-img):after{content:"";position:absolute;right:-30%;bottom:-50%;width:90%;aspect-ratio:1;border-radius:50%;border:1px solid #ffffff38;box-shadow:0 0 0 26px #ffffff0a,0 0 0 52px #ffffff08}
 
 
-/* area cards: title under the media, the work in one readable line, brief and judging as compact lists */
-.area .ah{padding:.9rem .5rem 0;margin:0}
+/* area cards: title, one line about the work, a quiet note */
 @media (width<=560px){.area{flex-basis:min(84vw,340px)}}
-.area .ak{display:block;font:500 .62rem/1.3 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:color-mix(in srgb,var(--b) 55%,#fff)}
-.area .ah h3{margin:.25rem 0 0;font:400 1.4rem/1.08 var(--serif);letter-spacing:-.005em;color:var(--ivory)}
-.area dl{margin:0;padding:.7rem .5rem .35rem;display:grid;gap:.7rem}
-.area dl>div+div{padding-top:.7rem;border-top:1px solid #bccbe21c}
-.area dt{color:#a9b9d3;letter-spacing:.12em;text-transform:uppercase;font-size:.6rem;font-weight:500}
-.area dd{margin:.28rem 0 0;font-size:.8rem;line-height:1.45;color:#f7f5efc7}
-.area dd.aw{font-size:.9rem;line-height:1.5;color:#f7f5efeb}
-.area .aw b{font-weight:500;color:var(--ivory);padding:0 .08em;margin:0 -.08em;border-radius:3px;
- background:linear-gradient(color-mix(in srgb,var(--b) 42%,transparent),color-mix(in srgb,var(--b) 42%,transparent)) no-repeat 0 88%/0% 38%;transition:background-size .7s var(--ease)}
-.area .aw b.on{background-size:100% 38%}
-.a-tags{list-style:none;margin:.4rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.28rem}
-.a-tags li{font:500 .66rem/1 var(--sans);letter-spacing:.01em;padding:.36rem .55rem;border-radius:999px;background:#ffffff0d;border:1px solid #ffffff1a;color:#f7f5efd6}
-.a-checks li{display:inline-flex;align-items:center;gap:.32rem;padding-left:.45rem}
-.a-checks li::before{content:"";width:.62rem;height:.62rem;flex:none;background:color-mix(in srgb,var(--b) 70%,#fff);
- -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/contain no-repeat;
- mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/contain no-repeat}
+.area figcaption{padding:1.1rem .55rem .45rem}
+.area h3{margin:0;font:400 1.45rem/1.1 var(--serif);letter-spacing:-.005em;color:var(--ivory)}
+.area .aw{margin:.6rem 0 0;font-size:.92rem;line-height:1.55;color:#f7f5efeb}
+.area .an{margin:.75rem 0 0;font-size:.8rem;line-height:1.55;color:#f7f5ef8c}
+.area .aw b{font-weight:inherit;background:linear-gradient(var(--b),var(--b)) no-repeat 0 100%/0% 1px;transition:background-size .8s var(--ease)}
+.area .aw b.on{background-size:100% 1px}
 .shelf-nav{display:flex;gap:.5rem}
 .shelf-nav button{width:44px;height:44px;border-radius:50%;border:1px solid #f7f5ef59;background:0 0;color:var(--ivory);cursor:pointer;font-size:1rem;transition:background .3s,color .3s}
 .shelf-nav button:hover{background:var(--ivory);color:var(--deep)}
@@ -729,7 +718,7 @@ html body .gl.gl.gl:is(:hover,:focus-visible,:active){background:var(--glbg)}
 <div class="slide dark" style="--bg:#1C2C4C">
   <section class="reels" id="practice">
     <div class="wrap head rv"><div><h2 class="h2">Areas of <em>practice.</em></h2></div>
-      <div class="side"><p>In each area I can write the brief, prepare the inputs, ship a reference deliverable and judge AI-generated work against it.</p>
+      <div class="side"><p>For each of these areas I can write the brief, make a reference version and judge AI-generated work against it.</p>
       <div class="shelf-nav" style="margin-top:1rem"><button type="button" data-dir="-1" aria-label="Previous area">←</button><button type="button" data-dir="1" aria-label="Next area">→</button></div></div></div>
     <div class="shelf" id="shelf" tabindex="0" aria-label="Areas of practice"></div>
   </section>
@@ -881,125 +870,49 @@ const seenPart=el=>{const r=el.getBoundingClientRect();if(!r.height||r.right<=0|
 const AREAS=[
  {
 "t": "Enterprise communication",
-"k": "Slide decks · reports · training",
 "a": "#2b4068",
 "b": "#5b7bb0",
 "m": "r-cyberguard",
-"w": "Decks for talks and panels, structured reports, and plain-language guides distilled from dense material.",
-"brief": "A pitch or training deck, built from",
-"inputs": [
-"Data and figures",
-"References",
-"The company template"
-],
-"ref": "A finished deck, judged on",
-"judge": [
-"Accurate data",
-"One idea per slide",
-"Readable charts",
-"A clear speaking flow"
-]
+"w": "Slide decks for talks and panels, reports, and guides that make dense material easy to read.",
+"n": "I usually start from the data, the references and the company template, and check that every number is right and every slide makes one point."
 },
  {
 "t": "Entertainment and media",
-"k": "Video · short-form content",
 "a": "#3b2d5c",
 "b": "#8a6fc0",
 "m": "r-collage-type",
-"w": "Short videos, stories and teasers cut for event and brand social media.",
-"brief": "A vertical teaser for an event or launch, built from",
-"inputs": [
-"Logo",
-"Key visuals",
-"Highlights",
-"Brand colors",
-"Licensed music"
-],
-"ref": "An edited video, judged on",
-"judge": [
-"Pacing",
-"Legible on-screen text",
-"Safe zones",
-"Captions",
-"Audio balance"
-]
+"w": "Short videos, stories and teasers for event and brand social media.",
+"n": "Mostly vertical teasers cut from the logo, key visuals and event highlights, with licensed music, captions and text that stays readable."
 },
  {
 "t": "Marketing and advertising",
-"k": "Campaigns · social content · brand guides",
 "a": "#1f4a55",
 "b": "#4c9aa8",
 "m": "r-lease-space",
-"w": "Social content in every format from the medical congresses I've attended, headline and hero tests for landing pages, and the Poupey brand.",
-"brief": "A carousel and stories campaign announcing a deadline, built from",
-"inputs": [
-"Brand guide",
-"Logos",
-"Dates",
-"Prices",
-"Lineup"
-],
-"ref": "A finished campaign set, judged on",
-"judge": [
-"A clear message",
-"One call to action",
-"Brand consistency",
-"Correct dates and prices"
-]
+"w": "Social content from the medical congresses I’ve attended, headline and hero tests for landing pages, and the Poupey brand.",
+"n": "A typical job is a carousel and stories announcing a deadline, made from the brand guide, with one call to action and every date and price checked."
 },
  {
 "t": "Staging and layouts",
-"k": "Posters · logos · concept art",
 "a": "#5a2f3a",
 "b": "#c06a7c",
 "m": "r-staging-reel",
 "seg": "0-6.35:0,6.35-11.95:1,11.95-99:2",
-"w": "The <b data-k=\"0\">Poupey mascot</b> with its color system, <b data-k=\"1\">expressions and icon set</b>, and the <b data-k=\"2\">Infância Segura brand image</b>. Plus posters for the medical congresses I attend.",
-"brief": "A poster or a mascot mood sheet, built from",
-"inputs": [
-"Logos",
-"Sponsor logos",
-"The program",
-"Photography",
-"Color references"
-],
-"ref": "A print-ready layout, judged on",
-"judge": [
-"Reads from a distance",
-"Character consistency",
-"Alignment",
-"Logo use",
-"Image resolution"
-]
+"w": "The <b data-k=\"0\">Poupey mascot</b>, its <b data-k=\"1\">expressions and icon set</b>, and the <b data-k=\"2\">Infância Segura brand image</b>. I also make posters for the medical congresses I attend.",
+"n": "Posters start from the logos, sponsors, program and photography, and are laid out to read from a distance and print sharp."
 },
  {
 "t": "Interactive digital products",
-"k": "Websites · apps",
 "a": "#24324f",
 "b": "#38bdf8",
 "m": "r-poupey-globe",
 "seg": "0-99:0",
 "w": "The <b data-k=\"0\">Poupey app</b> for iPhone and Android, the Infância Segura family app, and responsive landing pages in Next.js and Tailwind CSS.",
-"brief": "A one-page landing for a consumer app, built from",
-"inputs": [
-"Mascot assets",
-"Colors",
-"Copy",
-"App screenshots",
-"A reference site"
-],
-"ref": "A working responsive page, judged on",
-"judge": [
-"Hierarchy",
-"Call to action",
-"Mobile layout",
-"Working links",
-"No generic AI look"
-]
+"n": "A landing page usually starts from the mascot, colors, copy and app screenshots, and has to work well on a phone first."
 }
 ];
 
-document.getElementById('shelf').innerHTML=AREAS.map(a=>`<figure class="area" aria-label="${esc(a.t)}" style="--a:${a.a};--b:${a.b}"><div class="ph${a.m?' has-img':''}">${a.m?`<video muted loop playsinline autoplay preload="metadata" poster="media/${a.m}.jpg"${a.seg?` data-seg="${a.seg}"`:''} aria-hidden="true"><source src="media/${a.m}.mp4" type="video/mp4"></video>`:''}</div><figcaption class="ah"><span class="ak">${esc(a.k)}</span><h3>${esc(a.t)}</h3></figcaption><dl><div><dt>My work</dt><dd class="aw">${a.w}</dd></div><div><dt>The brief</dt><dd>${esc(a.brief)}<ul class="a-tags">${a.inputs.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></dd></div><div><dt>Reference and judging</dt><dd>${esc(a.ref)}<ul class="a-tags a-checks">${a.judge.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></dd></div></dl></figure>`).join('');
+document.getElementById('shelf').innerHTML=AREAS.map(a=>`<figure class="area" aria-label="${esc(a.t)}" style="--a:${a.a};--b:${a.b}"><div class="ph${a.m?' has-img':''}">${a.m?`<video muted loop playsinline autoplay preload="metadata" poster="media/${a.m}.jpg"${a.seg?` data-seg="${a.seg}"`:''} aria-hidden="true"><source src="media/${a.m}.mp4" type="video/mp4"></video>`:''}</div><figcaption><h3>${esc(a.t)}</h3><p class="aw">${a.w}</p><p class="an">${esc(a.n)}</p></figcaption></figure>`).join('');
 // the highlighted words in "My work" follow what the card's video is showing
 document.querySelectorAll('#shelf video[data-seg]').forEach(v=>{const marks=[...v.closest('.area').querySelectorAll('.aw b[data-k]')];if(!marks.length)return;
  if(RM){marks.forEach(m=>m.classList.add('on'));return}
