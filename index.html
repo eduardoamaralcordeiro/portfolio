@@ -1453,7 +1453,8 @@ document.querySelectorAll('.row').forEach(r=>{const b=r.querySelector('.row-btn'
 {const log=document.getElementById('chat'),form=document.getElementById('chatform'),inp=document.getElementById('chatin'),lab=document.getElementById('chatlab'),
   hp=form&&form.querySelector('.chat-hp'),again=document.getElementById('chatagain');
  if(log&&form){
- const TO='edamaralc@gmail.com',ENDPOINT='https://formsubmit.co/ajax/'+TO;
+ // Web3Forms: the access key only routes messages to Eduardo's inbox and is meant to be public
+ const TO='edamaralc@gmail.com',ENDPOINT='https://api.web3forms.com/submit',KEY='3d737c52-f39e-472b-9535-8476670c22e3';
  const wait=ms=>new Promise(r=>setTimeout(r,RM?0:ms));
  const scroll=()=>{log.scrollTop=log.scrollHeight};
  const bubble=(html,who='them',cls='')=>{const p=document.createElement('p');p.className=`msg ${who} ${cls}`.trim();p.innerHTML=html;log.appendChild(p);
@@ -1473,10 +1474,10 @@ document.querySelectorAll('.row').forEach(r=>{const b=r.querySelector('.row-btn'
   await say('I’m open for new projects. Leave your email and tell me what you have in mind.<small>Your details are only used to reply to you.</small>',null,800);
   setStep('email')};
  const send=async()=>{const t=typing();let ok=false;
-  try{if(hp&&hp.value){ok=true}else{
+  try{if(hp&&hp.value){ok=true}else if(/^[0-9a-f-]{36}$/i.test(KEY)){
    const r=await fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},
-    body:JSON.stringify({name:data.name,email:data.email,message:data.brief,_replyto:data.email,_subject:`New project from your portfolio: ${data.name}`,_template:'table',_captcha:'false'})});
-   const j=await r.json().catch(()=>({}));ok=r.ok&&(j.success===true||j.success==='true')}}catch(e){ok=false}
+    body:JSON.stringify({access_key:KEY,subject:`New project from your portfolio: ${data.name}`,from_name:'Portfolio chat',name:data.name,email:data.email,replyto:data.email,message:data.brief,botcheck:false})});
+   const j=await r.json().catch(()=>({}));ok=r.ok&&j.success===true}}catch(e){ok=false}
   await wait(400);t.remove();
   inp.placeholder=ok?'Message sent':'Not sent';
   if(ok){bubble(`Done. I’ll reply to <a href="mailto:${esc(data.email)}">${esc(data.email)}</a> soon ✨`);again.hidden=false}
