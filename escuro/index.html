@@ -979,6 +979,9 @@ html.night .bgv-oacid:after{background:linear-gradient(180deg,#060607cc 0%,#0606
 /* hero: silk */
 html.night .bgv-silk video{opacity:.85}
 html.night .bgv-silk:after{background:linear-gradient(90deg,#060607d9 0%,#06060780 40%,#0000 70%),linear-gradient(0deg,#060607b3,#0000 30%)}
+/* About lead: scroll scrub, letter by letter */
+html.night .lead.scrub .w{white-space:nowrap}
+html.night .lead.scrub .c{opacity:.5;transition:opacity .12s linear}
 
 </style>
 </head>
@@ -1027,7 +1030,7 @@ html.night .bgv-silk:after{background:linear-gradient(90deg,#060607d9 0%,#060607
   <section class="wrap about" id="about">
     <figure class="primer" aria-hidden="true"><span class="pr-bar"><video muted loop playsinline autoplay preload="auto" poster="../media/primer-bar.jpg"><source src="../media/primer-bar.mp4" type="video/mp4"></video></span><figcaption class="pr-cap">Building my future, one layer at a time…</figcaption></figure>
     <h2>A little <em>about me.</em></h2>
-    <p class="lead">Self-taught digital creator with more than 10 years of hands-on computer work. I make finished work in the same areas where AI creative output is now judged.</p>
+    <p class="lead scrub">Design Engineer experienced in taking products from concept to launch. I build fast, accessible websites made to last using modern web standards.</p>
     <div class="more" id="about-more" inert><div class="more-inner">
       <p style="--d:0s">Enterprise communication (slide decks and academic presentations), marketing and advertising (social content for medical congresses, sales funnels and brand identity), staging and layouts (event posters, mascot and visual identity), interactive digital products (a native app and responsive websites), and short-form video for social media.</p>
       <p style="--d:.08s">When I start something, I finish it, details included. Medical school shapes the way I work: I question assumptions and weigh the evidence before I decide, I keep learning under pressure, and the operating room taught me to move fast without losing precision.</p>
@@ -1769,5 +1772,6 @@ const rvs=document.querySelectorAll('.rv');const rio=new IntersectionObserver(es
 rvs.forEach(r=>rio.observe(r));setTimeout(()=>rvs.forEach(r=>r.classList.add('in')),3000);
 }
 </script>
+<script>(()=>{const el=document.querySelector(".lead.scrub");if(!el)return;const t=el.textContent.trim();el.innerHTML='<span class="sr-only">'+t+'</span><span aria-hidden="true">'+t.split(" ").map(w=>'<span class="w">'+[...w].map(c=>'<span class="c">'+c+"</span>").join("")+"</span>").join(" ")+"</span>";const cs=[...el.querySelectorAll(".c")],n=cs.length,E=3,LO=.5;if(matchMedia("(prefers-reduced-motion: reduce)").matches){cs.forEach(c=>c.style.opacity=1);return}let raf=0,last=-1;const run=()=>{raf=0;const r=el.getBoundingClientRect(),vh=innerHeight,p=Math.max(0,Math.min(1,(vh*.9-r.top)/(vh*.55)));if(p===last)return;last=p;const h=p*(n+E);for(let i=0;i<n;i++){const x=Math.max(0,Math.min(1,(h-i)/E));cs[i].style.opacity=(LO+(1-LO)*x).toFixed(3)}};const go=()=>{if(!raf)raf=requestAnimationFrame(run)};addEventListener("scroll",go,{passive:true});addEventListener("resize",go);run()})()</script>
 </body>
 </html>
