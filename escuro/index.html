@@ -956,6 +956,11 @@ html.night .bgv-rose video{opacity:.6}
 html.night .bgv-rose:after{background:linear-gradient(180deg,#060607e6 0%,#06060799 35%,#06060780 100%)}
 html.night .bgv-ocean video{opacity:.7}
 html.night .bgv-ocean:after{background:linear-gradient(180deg,#060607d9 0%,#060607a6 40%,#06060799 100%)}
+/* round 3 video backgrounds */
+html.night .bgv-ooze video{opacity:.38}
+html.night .bgv-ooze:after{background:linear-gradient(180deg,#060607cc 0%,#06060766 40%,#06060780 100%)}
+html.night .bgv-hex video{opacity:.6}
+html.night .bgv-hex:after{background:linear-gradient(180deg,#060607d9 0%,#06060780 30%,#06060766 100%)}
 
 </style>
 </head>
@@ -1059,7 +1064,7 @@ html.night .bgv-ocean:after{background:linear-gradient(180deg,#060607d9 0%,#0606
   </section>
 </div>
 
-<div class="slide dark" style="--bg:#0a0a0b">
+<div class="slide dark has-bgv" style="--bg:#060607"><div class="bgv bgv-hex" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="../media/bg-hex.jpg"><source src="../media/bg-hex.mp4" type="video/mp4"></video></div>
   <section class="mood" id="moodboard">
     <div class="wrap head rv"><div><h2 class="h2">The <em>moodboard.</em></h2></div></div>
     <div class="wrap mfilters" role="toolbar" aria-label="Filter references" id="mfilters"></div>
@@ -1076,7 +1081,7 @@ html.night .bgv-ocean:after{background:linear-gradient(180deg,#060607d9 0%,#0606
   </section>
 </div>
 
-<div class="slide dark" style="--bg:#0e0e10">
+<div class="slide dark has-bgv" style="--bg:#060607"><div class="bgv bgv-ocean" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="../media/bg-ocean.jpg"><source src="../media/bg-ocean.mp4" type="video/mp4"></video></div>
   <section class="wrap press rv">
     <figure><video src="../media/human-ai-door.mp4" poster="../media/human-ai-door.jpg" muted loop playsinline autoplay preload="metadata" aria-label="Animation: a door opens onto a wall of letters that spell human AI, under the line Opening the door to more human AI."></video></figure>
     <div>
@@ -1095,7 +1100,7 @@ html.night .bgv-ocean:after{background:linear-gradient(180deg,#060607d9 0%,#0606
   </section>
 </div>
 
-<div class="slide dark" style="--bg:#0f0f11">
+<div class="slide dark has-bgv" style="--bg:#060607"><div class="bgv bgv-ooze" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="../media/bg-ooze.jpg"><source src="../media/bg-ooze.mp4" type="video/mp4"></video></div>
   <section class="wrap services" id="services">
     <div class="head rv"><div><h2 class="h2">Creative evaluation <em>skills.</em></h2></div><a class="btn solid" href="#contact">Start a project <span class="arr" aria-hidden="true">→</span></a></div>
     <ul class="svc-list" id="svc"></ul>
