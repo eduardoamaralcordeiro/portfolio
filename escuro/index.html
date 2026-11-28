@@ -993,6 +993,11 @@ html.night .duo .bgv-ocean:after{background:linear-gradient(90deg,#060607b3 0%,#
 html.night .duo+.slide{margin-top:-36px}
 /* the portrait fades into the shared background instead of ending on a hard line */
 html.night .duo .stage .person,html.night .duo .stage .shadow{-webkit-mask-image:linear-gradient(#000 78%,#0000 99%);mask-image:linear-gradient(#000 78%,#0000 99%)}
+/* opening: 100% black; the background video fades in only as the About starts */
+html.night .duo{background:#000}
+html.night .duo>.duo-bg{-webkit-mask-image:linear-gradient(#0000 0,#0000 calc(var(--heroH,100svh) - 2vh),#000 calc(var(--heroH,100svh) + 22vh));mask-image:linear-gradient(#0000 0,#0000 calc(var(--heroH,100svh) - 2vh),#000 calc(var(--heroH,100svh) + 22vh))}
+/* computer: portrait sits against the right edge of the screen */
+@media (width>1150px){html.night .scene .stage{right:0}}
 
 </style>
 </head>
@@ -1019,7 +1024,7 @@ html.night .duo .stage .person,html.night .duo .stage .shadow{-webkit-mask-image
 </div>
 
 <main id="main">
-<div class="duo"><div class="bgv bgv-ocean duo-bg" aria-hidden="true"><video autoplay muted loop playsinline preload="auto" poster="../media/bg-ocean.jpg"><source src="../media/bg-ocean.mp4" type="video/mp4"></video></div><header class="scene dark" id="top" style="--backdrop:#060607">
+<div class="duo"><div class="bgv bgv-ocean duo-bg" aria-hidden="true"><video autoplay muted loop playsinline preload="auto" poster="../media/bg-ocean.jpg"><source src="../media/bg-ocean.mp4" type="video/mp4"></video></div><header class="scene dark" id="top" style="--backdrop:#000000">
   <div class="sunset" aria-hidden="true"></div>
   <div class="wrap layout"><div class="copy">
     <h1>Hi, I’m Eduardo,<br>and I design <span class="rot" aria-hidden="true"><span class="word" data-words='["posters.","social media.","websites.","slide decks.","apps."]'>posters.</span></span><span class="sr-only">posters, social media, websites, slide decks and apps.</span></h1>
@@ -1032,7 +1037,7 @@ html.night .duo .stage .person,html.night .duo .stage .shadow{-webkit-mask-image
     <div class="poll" id="poll" role="group" aria-label="Should you hire Eduardo?"><span class="q">Hire Eduardo?</span><span class="opts"><button type="button">Yes 🙌</button><button type="button">Obviously 💙</button></span><a class="result" href="#contact" hidden tabindex="-1">Let’s talk ✉️</a></div>
   </div>
   <div class="swatches" role="group" aria-label="Change the backdrop colour"><span class="sw-label">Pick a backdrop</span>
-            <button type="button" class="sw on" style="--c:#060607" data-bg="#060607" data-dark="1" aria-label="Black backdrop" aria-pressed="true"></button>
+            <button type="button" class="sw on" style="--c:#000000" data-bg="#000000" data-dark="1" aria-label="Black backdrop" aria-pressed="true"></button>
     <button type="button" class="sw" style="--c:#0d1526" data-bg="#0d1526" data-dark="1" aria-label="Midnight backdrop" aria-pressed="false"></button>
   </div>
 </header>
@@ -1787,5 +1792,6 @@ rvs.forEach(r=>rio.observe(r));setTimeout(()=>rvs.forEach(r=>r.classList.add('in
 <script>(()=>{const el=document.querySelector(".lead.scrub");if(!el)return;const t=el.textContent.trim();el.innerHTML='<span class="sr-only">'+t+'</span><span aria-hidden="true">'+t.split(" ").map(w=>'<span class="w">'+[...w].map(c=>'<span class="c">'+c+"</span>").join("")+"</span>").join(" ")+"</span>";const cs=[...el.querySelectorAll(".c")],n=cs.length,E=3,LO=.5;if(matchMedia("(prefers-reduced-motion: reduce)").matches){cs.forEach(c=>c.style.opacity=1);return}let raf=0,last=-1;const run=()=>{raf=0;const r=el.getBoundingClientRect(),vh=innerHeight,p=Math.max(0,Math.min(1,(vh*.9-r.top)/(vh*.55)));if(p===last)return;last=p;const h=p*(n+E);for(let i=0;i<n;i++){const x=Math.max(0,Math.min(1,(h-i)/E));cs[i].style.opacity=(LO+(1-LO)*x).toFixed(3)}};const go=()=>{if(!raf)raf=requestAnimationFrame(run)};addEventListener("scroll",go,{passive:true});addEventListener("resize",go);run()})()</script>
 <script>(()=>{const v=document.querySelector(".duo-bg video");if(!v||!("IntersectionObserver" in window))return;new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){const p=v.play();p&&p.catch(()=>{})}else v.pause()})}).observe(v.parentNode)})()</script>
 <script>(()=>{const ab=document.querySelector(".duo>.slide");if(!ab||matchMedia("(prefers-reduced-motion: reduce)").matches)return;let dir=0,t=0,busy=false;const top=()=>ab.getBoundingClientRect().top+scrollY;addEventListener("wheel",e=>{if(e.ctrlKey||Math.abs(e.deltaY)<Math.abs(e.deltaX))return;dir=Math.sign(e.deltaY);clearTimeout(t);t=setTimeout(()=>{if(busy)return;const y=scrollY,a=top();if(y>2&&y<a-2){busy=true;scrollTo({top:dir>0?a:0,behavior:"smooth"});setTimeout(()=>busy=false,900)}},140)},{passive:true})})()</script>
+<script>(()=>{const d=document.querySelector(".duo"),h=document.getElementById("top");if(!d||!h)return;const f=()=>d.style.setProperty("--heroH",h.offsetHeight+"px");f();addEventListener("resize",f);new ResizeObserver(f).observe(h)})()</script>
 </body>
 </html>
